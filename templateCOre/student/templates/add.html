@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+
+{% block content %}
+
+<h1>Add Page</h1>
+
+<a href="{% url 'student:all' %}" >All student</a>
+
+<img src="{% static 'logo.jpg' %}   ">
+
+
+{% endblock %}

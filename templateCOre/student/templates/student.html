@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Hello all Student</h1>
+
+<a href="{% url 'student:add' %}" >Add student</a>
+<a href="{% url 'student:edit' %}" >Edit student</a>
+
+
+
+<h1>first name: {{fname}}</h1>
+<h1>last name: {{lname}}</h1>
+
+
+{# the below list are numbers #}
+
+<p>{{mylist}}</p>
+
+<ul>
+    
+    {% for item in mylist %}
+    
+    <li>{{ item }}</li>
+    
+    {% endfor %}
+<ul>
+
+<p>{{mydict}}</p>
+
+
+{% if fname == 'Muhammed' %}
+Welcom {{fname}}
+{% else %}
+<h2> You are not Muhammed </h2>
+{% endif %}
+
+
+
+
+<ul>
+    {% for item in mylist %}
+    <li>{{item}}</li>
+    {% empty %}
+    <li>Sorry, no item in this list.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
